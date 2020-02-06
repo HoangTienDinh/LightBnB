@@ -137,7 +137,7 @@ const getAllProperties = function(options, limit = 10) {
 
   let finalPush = andArray.join(" AND ");
 
-  if (andArray) {
+  if (andArray.length) {
   queryString += `WHERE ${finalPush}`;
   }
 
@@ -146,7 +146,7 @@ const getAllProperties = function(options, limit = 10) {
   queryString += `
   GROUP BY properties.id
   `
-  if (havingArray) {
+  if (havingArray.length) {
     queryString += `HAVING ${havingArray}`
   }
   
